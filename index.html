@@ -2,70 +2,126 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Aqua Client</title>
+  <title>AquaFrost | Premium Minecraft Tools</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AquaFrost creates premium Minecraft clients, mods, and tools for competitive players.">
 
   <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Aqua Client">
-  <meta property="og:description" content="A fast, modern Minecraft client by AquaFrost.">
-  <meta property="og:url" content="#">
-  <meta property="og:image" content="#">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Favicon placeholder -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌊</text></svg>">
 
   <style>
-    /* ===== CSS VARIABLES ===== */
-    :root {
-      --aqua-blue: #00d4ff;
-      --dark-bg: #0a0a1a;
-      --gradient-primary: linear-gradient(135deg, #4b6eeb, #9176e3);
-      --gradient-secondary: linear-gradient(135deg, #00d4ff, #0077cc);
-      --text-glow: 0 0 10px rgba(0, 212, 255, 0.5);
-    }
-
-    /* ===== BASE STYLES ===== */
+    /* ===== CSS RESET & VARIABLES ===== */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
     }
 
+    :root {
+      --aqua: #00d4ff;
+      --aqua-dark: #0077cc;
+      --navy: #0a0a1a;
+      --navy-light: #1a1a2e;
+      --ice: #e6f7ff;
+      --gradient: linear-gradient(135deg, var(--aqua), var(--aqua-dark));
+      --text-glow: 0 0 10px rgba(0, 212, 255, 0.3);
+    }
+
+    /* ===== BASE STYLES ===== */
     body {
-      background: var(--dark-bg);
+      font-family: 'Poppins', sans-serif;
+      background: var(--navy);
       color: white;
-      min-height: 100vh;
+      line-height: 1.6;
       overflow-x: hidden;
     }
 
-    html {
-      scroll-behavior: smooth;
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s ease;
     }
 
-    /* ===== NAVBAR ===== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 28px;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: var(--gradient);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--text-glow);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--aqua);
+      border: 2px solid var(--aqua);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(0, 212, 255, 0.1);
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-subtitle {
+      color: #a0a0ff;
+      font-size: 1.1rem;
+      margin-bottom: 3rem;
+    }
+
+    /* ===== HEADER & NAV ===== */
     header {
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
       background: rgba(10, 10, 26, 0.95);
       backdrop-filter: blur(10px);
-      z-index: 1000;
-      border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+      border-bottom: 1px solid rgba(0, 212, 255, 0.1);
     }
 
     .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 20px;
     }
 
     .logo {
@@ -74,7 +130,7 @@
       gap: 12px;
       font-size: 1.8rem;
       font-weight: 700;
-      background: var(--gradient-primary);
+      background: var(--gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -83,69 +139,66 @@
     .logo-icon {
       width: 40px;
       height: 40px;
-      background: var(--gradient-primary);
+      background: var(--gradient);
       border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       color: white;
     }
 
     .nav-links {
       display: flex;
-      gap: 2rem;
+      gap: 30px;
       align-items: center;
     }
 
     .nav-link {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      padding: 0.5rem 1rem;
+      padding: 8px 16px;
       border-radius: 8px;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .nav-link i {
-      color: var(--aqua-blue);
+      font-weight: 500;
     }
 
     .nav-link:hover {
       background: rgba(0, 212, 255, 0.1);
-      transform: translateY(-2px);
+      color: var(--aqua);
+    }
+
+    .nav-link i {
+      margin-right: 8px;
+      color: var(--aqua);
     }
 
     .discord-btn {
-      background: var(--gradient-primary);
+      background: #5865F2;
       color: white;
-      padding: 0.8rem 1.5rem;
+      padding: 10px 20px;
       border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
       display: flex;
       align-items: center;
       gap: 8px;
-      transition: all 0.3s ease;
     }
 
     .discord-btn:hover {
+      background: #4752c4;
       transform: translateY(-2px);
-      box-shadow: var(--text-glow);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
     }
 
     /* ===== HERO SECTION ===== */
     .hero {
-      min-height: 80vh;
+      min-height: 100vh;
       display: flex;
       align-items: center;
-      justify-content: center;
-      padding: 4rem 2rem;
       position: relative;
       overflow: hidden;
+      padding-top: 100px;
     }
 
     .hero::before {
@@ -153,214 +206,281 @@
       position: absolute;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 50%);
+      background: radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
     }
 
     .hero-content {
-      max-width: 800px;
-      text-align: center;
+      position: relative;
       z-index: 1;
+      max-width: 800px;
     }
 
     .hero-title {
       font-size: 4rem;
-      background: var(--gradient-primary);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      background: var(--gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      margin-bottom: 1.5rem;
-      line-height: 1.2;
     }
 
     .hero-subtitle {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       color: #a0a0ff;
-      margin-bottom: 3rem;
-      opacity: 0.9;
+      margin-bottom: 2.5rem;
+      max-width: 600px;
     }
 
-    .cta-buttons {
+    .hero-buttons {
       display: flex;
-      gap: 1.5rem;
-      justify-content: center;
+      gap: 20px;
       flex-wrap: wrap;
     }
 
-    .btn {
-      padding: 1rem 2.5rem;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    /* ===== PROJECTS SECTION ===== */
+    .projects {
+      background: var(--navy-light);
     }
 
-    .btn-primary {
-      background: var(--gradient-primary);
-      color: white;
-      border: none;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(75, 110, 235, 0.3);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--aqua-blue);
-      border: 2px solid var(--aqua-blue);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(0, 212, 255, 0.1);
-      transform: translateY(-3px);
-    }
-
-    /* ===== FEATURES SECTION ===== */
-    .features {
-      padding: 6rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 4rem;
-      background: var(--gradient-primary);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .features-grid {
+    .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-bottom: 4rem;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
     }
 
-    .feature-card {
+    .project-card {
       background: rgba(255, 255, 255, 0.05);
       border-radius: 20px;
-      padding: 2.5rem;
+      padding: 30px;
       border: 1px solid rgba(0, 212, 255, 0.2);
       transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
 
-    .feature-card:hover {
+    .project-card:hover {
       transform: translateY(-10px);
-      border-color: var(--aqua-blue);
+      border-color: var(--aqua);
       background: rgba(0, 212, 255, 0.05);
     }
 
-    .feature-icon {
+    .project-icon {
       width: 70px;
       height: 70px;
-      background: var(--gradient-primary);
+      background: var(--gradient);
       border-radius: 15px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 1.5rem;
-      font-size: 2rem;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
       color: white;
     }
 
-    .feature-title {
+    .project-title {
       font-size: 1.5rem;
-      margin-bottom: 1rem;
+      margin-bottom: 10px;
       color: white;
     }
 
-    .feature-desc {
+    .project-desc {
       color: #a0a0ff;
-      line-height: 1.6;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
     }
 
-    /* ===== SHOWCASE SECTION ===== */
-    .showcase {
-      padding: 4rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
     }
 
-    .showcase-grid {
+    .tag {
+      background: rgba(0, 212, 255, 0.1);
+      color: var(--aqua);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+    }
+
+    /* ===== ABOUT SECTION ===== */
+    .about-content {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 4rem;
+      gap: 60px;
       align-items: center;
     }
 
-    .showcase-content h2 {
+    .about-text p {
+      color: #a0a0ff;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
       font-size: 2.5rem;
-      margin-bottom: 1.5rem;
-      background: var(--gradient-primary);
+      font-weight: 700;
+      background: var(--gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      margin-bottom: 5px;
     }
 
-    .showcase-content p {
+    .stat-label {
       color: #a0a0ff;
-      line-height: 1.6;
-      margin-bottom: 2rem;
+      font-size: 0.9rem;
     }
 
-    .showcase-preview {
-      background: linear-gradient(135deg, #1a1a2e, #16213e);
+    /* ===== TEAM SECTION ===== */
+    .team {
+      background: var(--navy-light);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .team-card {
+      text-align: center;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.05);
       border-radius: 20px;
-      padding: 2rem;
-      border: 2px solid rgba(0, 212, 255, 0.3);
-      position: relative;
-      overflow: hidden;
-      min-height: 400px;
+      transition: all 0.3s ease;
+    }
+
+    .team-card:hover {
+      transform: translateY(-5px);
+      background: rgba(0, 212, 255, 0.05);
+    }
+
+    .team-avatar {
+      width: 120px;
+      height: 120px;
+      background: var(--gradient);
+      border-radius: 50%;
+      margin: 0 auto 20px;
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 2.5rem;
+      color: white;
     }
 
-    .preview-placeholder {
-      text-align: center;
-      color: var(--aqua-blue);
-      font-size: 1.2rem;
+    .team-name {
+      font-size: 1.3rem;
+      margin-bottom: 5px;
+      color: white;
+    }
+
+    .team-role {
+      color: var(--aqua);
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+
+    .team-bio {
+      color: #a0a0ff;
+      font-size: 0.9rem;
+    }
+
+    /* ===== CONTACT SECTION ===== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-top: 40px;
+    }
+
+    .social-links {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      background: rgba(0, 212, 255, 0.1);
+      transform: translateX(10px);
+    }
+
+    .social-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--gradient);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    .social-info h3 {
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+      color: white;
+    }
+
+    .social-info p {
+      color: #a0a0ff;
+      font-size: 0.9rem;
     }
 
     /* ===== FOOTER ===== */
     footer {
       background: rgba(10, 10, 26, 0.95);
       border-top: 1px solid rgba(0, 212, 255, 0.2);
-      padding: 4rem 2rem 2rem;
-      margin-top: 4rem;
+      padding: 60px 0 30px;
     }
 
     .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 3rem;
-      margin-bottom: 3rem;
+      gap: 40px;
+      margin-bottom: 40px;
     }
 
     .footer-logo {
       font-size: 2rem;
       font-weight: 700;
-      margin-bottom: 1rem;
-      background: var(--gradient-primary);
+      margin-bottom: 15px;
+      background: var(--gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
     .footer-links h3 {
-      color: white;
-      margin-bottom: 1.5rem;
       font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: white;
     }
 
     .footer-links ul {
@@ -368,81 +488,70 @@
     }
 
     .footer-links li {
-      margin-bottom: 0.8rem;
+      margin-bottom: 10px;
     }
 
     .footer-links a {
       color: #a0a0ff;
-      text-decoration: none;
-      transition: color 0.3s ease;
     }
 
     .footer-links a:hover {
-      color: var(--aqua-blue);
-    }
-
-    .social-links {
-      display: flex;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .social-link {
-      width: 45px;
-      height: 45px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .social-link:hover {
-      background: var(--gradient-primary);
-      transform: translateY(-3px);
+      color: var(--aqua);
     }
 
     .copyright {
       text-align: center;
-      padding-top: 2rem;
+      padding-top: 30px;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
       color: #a0a0ff;
       font-size: 0.9rem;
     }
 
     /* ===== RESPONSIVE DESIGN ===== */
-    @media (max-width: 768px) {
+    @media (max-width: 992px) {
       .nav-links {
         display: none;
       }
 
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .hero-title {
+        font-size: 3rem;
+      }
+
+      .about-content,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
       .hero-title {
         font-size: 2.5rem;
       }
 
       .hero-subtitle {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
       }
 
       .btn {
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
-      }
-
-      .showcase-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .features-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-content {
-        grid-template-columns: 1fr;
+        width: 100%;
+        justify-content: center;
       }
     }
 
@@ -470,28 +579,38 @@
 </head>
 
 <body>
-  <!-- Navigation -->
+  <!-- Header -->
   <header>
-    <div class="nav-container">
-      <div class="logo">
+    <div class="container nav-container">
+      <a href="#" class="logo">
         <div class="logo-icon">
-          <i class="fas fa-water"></i>
+          <i class="fas fa-snowflake"></i>
         </div>
-        Aqua Client
+        AquaFrost
+      </a>
+
+      <div class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
       </div>
-      
+
       <div class="nav-links">
         <a href="#home" class="nav-link">
           <i class="fas fa-home"></i> Home
         </a>
-        <a href="#features" class="nav-link">
-          <i class="fas fa-star"></i> Features
+        <a href="#projects" class="nav-link">
+          <i class="fas fa-rocket"></i> Projects
         </a>
-        <a href="#showcase" class="nav-link">
-          <i class="fas fa-cogs"></i> Showcase
+        <a href="#about" class="nav-link">
+          <i class="fas fa-users"></i> About Us
+        </a>
+        <a href="#team" class="nav-link">
+          <i class="fas fa-code"></i> Team
+        </a>
+        <a href="#contact" class="nav-link">
+          <i class="fas fa-envelope"></i> Contact
         </a>
         <a href="https://discord.gg/pXqqVkVzcd" class="discord-btn">
-          <i class="fab fa-discord"></i> Join Discord
+          <i class="fab fa-discord"></i> Discord
         </a>
       </div>
     </div>
@@ -499,72 +618,223 @@
 
   <!-- Hero Section -->
   <section id="home" class="hero">
-    <div class="hero-content">
-      <h1 class="hero-title fade-in">The Most Advanced Minecraft PVP Client</h1>
-      <p class="hero-subtitle fade-in">Built for performance, designed for victory. Experience Minecraft like never before.</p>
-      
-      <div class="cta-buttons">
-        <a href="#features" class="btn btn-primary fade-in">
-          <i class="fas fa-rocket"></i> Explore Features
-        </a>
-        <a href="https://discord.gg/pXqqVkVzcd" class="btn btn-secondary fade-in">
-          <i class="fab fa-discord"></i> Join Community
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Features Section -->
-  <section id="features" class="features">
-    <h2 class="section-title fade-in">Why Choose Aqua Client?</h2>
-    
-    <div class="features-grid">
-      <div class="feature-card fade-in">
-        <div class="feature-icon">
-          <i class="fas fa-hammer"></i>
-        </div>
-        <h3 class="feature-title">Forge Based</h3>
-        <p class="feature-desc">Seamlessly integrates with countless Forge mods. Enjoy the best of both worlds with full Forge compatibility.</p>
-      </div>
-      
-      <div class="feature-card fade-in">
-        <div class="feature-icon">
-          <i class="fas fa-shield-alt"></i>
-        </div>
-        <h3 class="feature-title">Secure & Optimized</h3>
-        <p class="feature-desc">Built with security in mind. Our closed-source architecture ensures stability and protection against modifications.</p>
-      </div>
-      
-      <div class="feature-card fade-in">
-        <div class="feature-icon">
-          <i class="fas fa-layer-group"></i>
-        </div>
-        <h3 class="feature-title">Extensive Mod Library</h3>
-        <p class="feature-desc">Regular updates with powerful, customizable mods. Everything you need for competitive Minecraft PVP.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Showcase Section -->
-  <section id="showcase" class="showcase">
-    <div class="showcase-grid">
-      <div class="showcase-content fade-in">
-        <h2>Advanced Mod Menu</h2>
-        <p>Experience the most intuitive and powerful mod menu ever created for Minecraft. Customize every aspect of your gameplay with our advanced interface.</p>
-        <p>Real-time configuration, instant updates, and seamless integration with all your favorite mods.</p>
+    <div class="container">
+      <div class="hero-content fade-in">
+        <h1 class="hero-title">Creating the Future of Minecraft</h1>
+        <p class="hero-subtitle">AquaFrost develops premium Minecraft clients, mods, and tools for competitive players. We're passionate about performance, design, and community.</p>
         
-        <div style="margin-top: 2rem;">
-          <a href="https://youtube.com/@aquafrosted" class="btn btn-secondary">
-            <i class="fab fa-youtube"></i> Watch Demo
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">
+            <i class="fas fa-eye"></i> View Our Work
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            <i class="fas fa-comments"></i> Join Community
           </a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <h2 class="section-title fade-in">Our Projects</h2>
+      <p class="section-subtitle fade-in">Premium tools crafted for competitive Minecraft</p>
       
-      <div class="showcase-preview fade-in floating">
-        <div class="preview-placeholder">
-          <i class="fas fa-gamepad" style="font-size: 4rem; margin-bottom: 1rem;"></i>
-          <p>Aqua Client Interface Preview</p>
-          <small>Experience the future of Minecraft clients</small>
+      <div class="projects-grid">
+        <div class="project-card fade-in">
+          <div class="project-icon">
+            <i class="fas fa-gamepad"></i>
+          </div>
+          <h3 class="project-title">Aqua Client</h3>
+          <p class="project-desc">The most advanced Minecraft PVP client with cutting-edge performance, beautiful UI, and extensive mod support.</p>
+          <div class="project-tags">
+            <span class="tag">Forge</span>
+            <span class="tag">Performance</span>
+            <span class="tag">PVP</span>
+            <span class="tag">1.8.9</span>
+          </div>
+          <div class="project-features">
+            <p><i class="fas fa-check" style="color: var(--aqua); margin-right: 8px;"></i> Advanced optimization</p>
+            <p><i class="fas fa-check" style="color: var(--aqua); margin-right: 8px;"></i> Customizable mod menu</p>
+            <p><i class="fas fa-check" style="color: var(--aqua); margin-right: 8px;"></i> Regular updates</p>
+          </div>
+        </div>
+        
+        <div class="project-card fade-in">
+          <div class="project-icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3 class="project-title">Modding Tools</h3>
+          <p class="project-desc">Powerful libraries and frameworks for Minecraft mod development, built with performance and ease-of-use in mind.</p>
+          <div class="project-tags">
+            <span class="tag">Libraries</span>
+            <span class="tag">Frameworks</span>
+            <span class="tag">Development</span>
+          </div>
+          <div class="project-features">
+            <p><i class="fas fa-check" style="color: var(--aqua); margin-right: 8px;"></i> Developer-friendly APIs</p>
+            <p><i class="fas fa-check" style="color: var(--aqua); margin-right: 8px;"></i> Extensive documentation</p>
+            <p><i class="fas fa-check" style="color: var(--aqua); margin-right: 8px;"></i> Community support</p>
+          </div>
+        </div>
+        
+        <div class="project-card fade-in">
+          <div class="project-icon">
+            <i class="fas fa-cube"></i>
+          </div>
+          <h3 class="project-title">Quality of Life Mods</h3>
+          <p class="project-desc">Essential mods that enhance your Minecraft experience without compromising performance or gameplay integrity.</p>
+          <div class="project-tags">
+            <span class="tag">Utilities</span>
+            <span class="tag">Enhancements</span>
+            <span class="tag">QoL</span>
+          </div>
+          <div class="project-features">
+            <p><i class="fas fa-check" style="color: var(--aqua); margin-right: 8px;"></i> Performance first</p>
+            <p><i class="fas fa-check" style="color: var(--aqua); margin-right: 8px;"></i> Minimal resource usage</p>
+            <p><i class="fas fa-check" style="color: var(--aqua); margin-right: 8px;"></i> Regular maintenance</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2 class="section-title fade-in">About AquaFrost</h2>
+      <p class="section-subtitle fade-in">Our mission is to create the best Minecraft tools</p>
+      
+      <div class="about-content">
+        <div class="about-text fade-in">
+          <p>AquaFrost started as a small team of passionate Minecraft players who wanted better tools for competitive gameplay. We were tired of clients that sacrificed performance for features, or features for performance.</p>
+          <p>Today, we're a dedicated group of developers, designers, and community managers committed to creating premium Minecraft tools that don't compromise. Every project we release is thoroughly tested, optimized, and designed with the user in mind.</p>
+          <p>We believe in transparency, quality, and community. That's why we're active in our Discord, listen to feedback, and constantly improve our products.</p>
+        </div>
+        
+        <div class="about-stats fade-in">
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-number">3+</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">50K+</div>
+              <div class="stat-label">Downloads</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">5+</div>
+              <div class="stat-label">Active Projects</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">24/7</div>
+              <div class="stat-label">Community Support</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section id="team" class="team">
+    <div class="container">
+      <h2 class="section-title fade-in">Our Team</h2>
+      <p class="section-subtitle fade-in">The passionate people behind AquaFrost</p>
+      
+      <div class="team-grid">
+        <div class="team-card fade-in">
+          <div class="team-avatar">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3 class="team-name">Lead Developer</h3>
+          <p class="team-role">Core Systems & Performance</p>
+          <p class="team-bio">10+ years of Java experience, focuses on optimization and clean architecture.</p>
+        </div>
+        
+        <div class="team-card fade-in">
+          <div class="team-avatar">
+            <i class="fas fa-paint-brush"></i>
+          </div>
+          <h3 class="team-name">UI/UX Designer</h3>
+          <p class="team-role">Interface & Experience</p>
+          <p class="team-bio">Creates beautiful, intuitive interfaces that enhance gameplay without distraction.</p>
+        </div>
+        
+        <div class="team-card fade-in">
+          <div class="team-avatar">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3 class="team-name">Community Manager</h3>
+          <p class="team-role">Support & Engagement</p>
+          <p class="team-bio">Keeps our community active, happy, and provides support to all our users.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section-title fade-in">Get In Touch</h2>
+      <p class="section-subtitle fade-in">Connect with us and our community</p>
+      
+      <div class="contact-grid">
+        <div class="social-links fade-in">
+          <a href="https://discord.gg/pXqqVkVzcd" class="social-link">
+            <div class="social-icon">
+              <i class="fab fa-discord"></i>
+            </div>
+            <div class="social-info">
+              <h3>Discord Community</h3>
+              <p>Join our active Discord for support, updates, and discussions</p>
+            </div>
+          </a>
+          
+          <a href="https://youtube.com/@aquafrosted" class="social-link">
+            <div class="social-icon">
+              <i class="fab fa-youtube"></i>
+            </div>
+            <div class="social-info">
+              <h3>YouTube Channel</h3>
+              <p>Tutorials, showcases, and development updates</p>
+            </div>
+          </a>
+          
+          <div class="social-link">
+            <div class="social-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="social-info">
+              <h3>Business Inquiries</h3>
+              <p>contact@aquafrost.dev</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-info fade-in">
+          <div style="background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 20px;">
+            <h3 style="margin-bottom: 20px; color: white;">Why Join AquaFrost?</h3>
+            <ul style="color: #a0a0ff; list-style: none;">
+              <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
+                <i class="fas fa-check" style="color: var(--aqua); position: absolute; left: 0;"></i>
+                <strong>Active Development:</strong> Regular updates and new features
+              </li>
+              <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
+                <i class="fas fa-check" style="color: var(--aqua); position: absolute; left: 0;"></i>
+                <strong>Community Focused:</strong> Your feedback directly shapes our products
+              </li>
+              <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
+                <i class="fas fa-check" style="color: var(--aqua); position: absolute; left: 0;"></i>
+                <strong>Quality First:</strong> Every release is thoroughly tested
+              </li>
+              <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
+                <i class="fas fa-check" style="color: var(--aqua); position: absolute; left: 0;"></i>
+                <strong>Transparent Process:</strong> We share our roadmap and progress
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -572,64 +842,70 @@
 
   <!-- Footer -->
   <footer>
-    <div class="footer-content">
-      <div class="footer-brand">
-        <div class="footer-logo">Aqua Client</div>
-        <p style="color: #a0a0ff; margin-bottom: 1rem;">The ultimate Minecraft PVP experience</p>
-        <div class="social-links">
-          <a href="https://discord.gg/pXqqVkVzcd" class="social-link">
-            <i class="fab fa-discord"></i>
-          </a>
-          <a href="https://youtube.com/@aquafrosted" class="social-link">
-            <i class="fab fa-youtube"></i>
-          </a>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo">AquaFrost</div>
+          <p style="color: #a0a0ff; margin-bottom: 20px;">Creating premium Minecraft tools since 2022</p>
+          <div style="display: flex; gap: 15px;">
+            <a href="https://discord.gg/pXqqVkVzcd" style="color: #a0a0ff;">
+              <i class="fab fa-discord"></i>
+            </a>
+            <a href="https://youtube.com/@aquafrosted" style="color: #a0a0ff;">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Projects</h3>
+          <ul>
+            <li><a href="#projects">Aqua Client</a></li>
+            <li><a href="#projects">Modding Tools</a></li>
+            <li><a href="#projects">QoL Mods</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#team">Our Team</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Disclaimer</a></li>
+          </ul>
         </div>
       </div>
       
-      <div class="footer-links">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#showcase">Showcase</a></li>
-          <li><a href="https://discord.gg/pXqqVkVzcd">Discord</a></li>
-        </ul>
+      <div class="copyright">
+        <p>© 2025 AquaFrost. All rights reserved.</p>
+        <p style="margin-top: 10px; font-size: 0.8rem;">Not affiliated with Mojang Studios or Microsoft.</p>
+        <p style="margin-top: 5px; font-size: 0.8rem; color: #6666ff;">Made with ❤️ for the Minecraft community</p>
       </div>
-      
-      <div class="footer-links">
-        <h3>Resources</h3>
-        <ul>
-          <li><a href="https://youtube.com/@aquafrosted">YouTube Tutorials</a></li>
-          <li><a href="https://discord.gg/pXqqVkVzcd">Community Support</a></li>
-          <li><a href="#">Setup Guide</a></li>
-          <li><a href="#">FAQ</a></li>
-        </ul>
-      </div>
-    </div>
-    
-    <div class="copyright">
-      <p>AquaFrost © 2025 | Not affiliated with Mojang Studios</p>
-      <p style="margin-top: 0.5rem; font-size: 0.8rem; color: #6666ff;">
-        Built with ❤️ for the Minecraft community
-      </p>
     </div>
   </footer>
 
   <script>
-    // Fade-in animation on scroll
+    // Fade-in animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
         }
       });
-    }, {
-      threshold: 0.1
-    });
+    }, { threshold: 0.1 });
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // Smooth scrolling for anchor links
+    // Smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -646,13 +922,35 @@
       });
     });
 
-    // Mobile menu toggle (you can expand this for mobile)
-    window.addEventListener('resize', function() {
-      if (window.innerWidth > 768) {
-        // Show desktop navigation
-        document.querySelector('.nav-links').style.display = 'flex';
+    // Mobile menu toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+      if (navLinks.style.display === 'flex') {
+        navLinks.style.flexDirection = 'column';
+        navLinks.style.position = 'absolute';
+        navLinks.style.top = '100%';
+        navLinks.style.left = '0';
+        navLinks.style.width = '100%';
+        navLinks.style.background = 'var(--navy)';
+        navLinks.style.padding = '20px';
+        navLinks.style.gap = '15px';
+      }
+    });
+
+    // Close mobile menu on resize
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 992) {
+        navLinks.style.display = 'flex';
+        navLinks.style.position = 'static';
+        navLinks.style.flexDirection = 'row';
+        navLinks.style.width = 'auto';
+        navLinks.style.background = 'transparent';
+        navLinks.style.padding = '0';
       } else {
-        // You can add mobile menu logic here
+        navLinks.style.display = 'none';
       }
     });
   </script>
