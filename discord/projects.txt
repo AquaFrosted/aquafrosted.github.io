@@ -1,0 +1,10 @@
+### All in One Launcher 
+[All In One Launcher](<https://github.com/AquaFrosted/launcher/>) & [AquaFrost AIO Launcher Website](<https://org.aquafrost.ct.ws/launcher>)
+### Aqua Client  
+[Aqua Client](<https://github.com/AquaFrosted/AquaClient/>) & [Aqua Client Website](<https://net.aquafrost.ct.ws/>)
+### Loup Client
+[Loup Client](<https://github.com/reallytyler/LoupClient/>)
+### Apple Client 
+[Apple Client](<https://codeberg.org/AppleClient/client>) [Apple Client Website](<https://appleclient.codeberg.page/>)
+### Jet Client
+[Jet Client Website](<https://codeberg.org/JetClient/client>) [Jet Client](<https://jetclient.codeberg.page/>)
