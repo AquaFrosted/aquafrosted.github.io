@@ -7,7 +7,7 @@
 ### Loup Client
 [Loup Client](https://github.com/reallytyler/LoupClient/releases/download/1.0/loupclient.zip)
 
-### Apple Client
+### Apple Client (Upcoming)
 [AppleClientInstaller-1.0.jar](https://org.aquafrost.ct.ws/discord/sh.md)
 
 ### Jet Client (Upcoming)
