@@ -1,14 +1,14 @@
-{
-  "flags": 32768,
-  "components": [
-    {
-      "type": 17,
-      "components": [
-        {
-          "type": 10,
-          "content": "### All in One Launcher (Upcoming)\n[AquaFrostLauncher-1.0.exe](https://org.aquafrost.ct.ws/discord/sh.md)\n### Aqua Client\n[AquaClientInstaller-1.0.jar](https://github.com/AquaFrosted/AquaClient/releases/download/installer/AquaClientInstaller-1.0.jar) --> [How to Install](https://www.youtube.com/watch?v=5YE41nYC7p0)\n### Loup Client\n[Loup Client](https://github.com/reallytyler/LoupClient/releases/download/1.0/loupclient.zip)\n### Apple Client\n[AppleClientInstaller-1.0.jar](https://org.aquafrost.ct.ws/discord/sh.md)\n### Jet Client (Upcoming)\n[JetClientInstaller-1.0.jar](https://org.aquafrost.ct.ws/discord/sh.md)\n"
-        }
-      ]
-    }
-  ]
-}
+### All in One Launcher (Upcoming)
+[AquaFrostLauncher-1.0.exe](https://org.aquafrost.ct.ws/discord/sh.md)
+
+### Aqua Client  
+[AquaClientInstaller-1.0.jar](https://github.com/AquaFrosted/AquaClient/releases/download/installer/AquaClientInstaller-1.0.jar) --> [How to Install](https://www.youtube.com/watch?v=5YE41nYC7p0)
+
+### Loup Client
+[Loup Client](https://github.com/reallytyler/LoupClient/releases/download/1.0/loupclient.zip)
+
+### Apple Client
+[AppleClientInstaller-1.0.jar](https://org.aquafrost.ct.ws/discord/sh.md)
+
+### Jet Client (Upcoming)
+[JetClientInstaller-1.0.jar](https://org.aquafrost.ct.ws/discord/sh.md)
